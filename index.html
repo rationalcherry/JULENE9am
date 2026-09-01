@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff8ed" />
+  <title>쥴린의 9출 챌린지</title>
+  <style>
+    :root{--bg:#eeeeee;--paper:#ffffff;--ink:#2e2932;--muted:#716b75;--line:#d7d2d9;--grape:#8b68a7;--grape-soft:#d3c4e3;--gold:#d39a43;--green:#4c9876;--fail:#c97891;--fail-soft:#f5e1e7;--shadow:0 12px 30px rgba(64,52,72,.10)}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#e8bcf0,transparent 34%),radial-gradient(circle at 100% 100%,#d6d6d6,transparent 42%),var(--bg);color:var(--ink);font-family:ui-rounded,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;line-height:1.5}
+    main{width:min(100% - 32px,920px);margin:0 auto;padding:42px 0 64px}.eyebrow{margin:0 0 6px;color:var(--grape);font-size:12px;font-weight:800;letter-spacing:.12em}.top{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:24px}h1{margin:0;font-size:clamp(28px,6vw,48px);line-height:1.1;letter-spacing:-.06em}h2{font-size:18px;margin:0 0 16px}.subtitle{color:var(--muted);margin:10px 0 0}.year{color:var(--muted);font-size:14px;text-align:right}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-bottom:16px}.panel{background:color-mix(in srgb,var(--paper) 94%,transparent);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.goal-panel{padding:22px;display:flex;align-items:center;gap:18px}.grape{width:74px;height:74px;border-radius:50%;background:var(--grape-soft);display:grid;place-items:center;overflow:hidden;flex:none}.grape img{width:100%;height:100%;object-fit:contain}.goal-number{font-size:34px;font-weight:800;letter-spacing:-.06em}.goal-copy{color:var(--muted);font-size:14px}.progress{height:10px;background:#e1dee3;border-radius:99px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--grape),#aa8bc0);border-radius:99px;transition:width .2s ease}.summary{padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.metric-label{font-size:13px;color:var(--muted)}.metric-value{font-size:25px;font-weight:800;letter-spacing:-.04em}.metric-value small{font-size:14px;font-weight:500;color:var(--muted)}
+    .calendar-panel{padding:22px}.calendar-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.calendar-note{font-size:13px;color:var(--muted)}.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.weekday{text-align:center;color:var(--muted);font-size:12px;padding-bottom:4px}.day{min-height:88px;border:1px solid var(--line);border-radius:15px;background:#ffffff;padding:10px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;color:var(--ink);font:inherit;cursor:pointer;transition:transform .15s ease,border-color .15s ease,background .15s ease}.day:hover{transform:translateY(-2px);border-color:var(--grape)}.day:focus-visible{outline:3px solid #baa2ca;outline-offset:2px}.day.off{visibility:hidden;border:0;background:transparent}.day.not-office{background:#e4e2e4;color:#a49da7;cursor:default}.day.not-office:hover{transform:none;border-color:var(--line)}.day-num{font-size:13px}.day-mark{display:grid;place-items:center;min-height:40px}.stamp{width:44px;height:44px;object-fit:contain}.day.success{background:var(--grape-soft);border-color:#bda7ce}.day.fail{background:var(--fail-soft);border-color:#e2b2c1}.day.today{box-shadow:inset 0 0 0 2px var(--gold)}.day.future{opacity:.75}.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;color:var(--muted);font-size:13px}.legend span{display:flex;align-items:center;gap:6px}.legend i{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;font-style:normal;background:var(--grape-soft);color:var(--grape)}.legend .empty{background:#ffffff;border:1px solid var(--line)}.legend .fail-mark{background:var(--fail-soft)}.actions{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:16px}.hint{margin:0;color:var(--muted);font-size:13px}.reset{border:0;background:transparent;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit}.reset:hover{color:var(--ink)}
+    @media(max-width:680px){main{width:min(100% - 20px,920px);padding-top:28px}.top{align-items:flex-start}.year{font-size:12px}.hero{grid-template-columns:1fr}.goal-panel{padding:18px}.summary{padding:18px}.calendar-panel{padding:14px}.days{gap:5px}.day{min-height:72px;border-radius:11px;padding:7px}.day-mark{font-size:21px}.calendar-note{font-size:12px}.actions{align-items:flex-start;flex-direction:column}}
+    @media(max-width:390px){.day{min-height:64px;padding:5px}.day-num{font-size:12px}.day-mark{font-size:18px}.weekday{font-size:11px}.goal-number{font-size:29px}}
+    .stamp{width:46px;height:46px;object-fit:contain;mix-blend-mode:multiply}.day.today{box-shadow:none}
+  </style>
+</head>
+<body>
+  <main>
+    <header class="top">
+      <div><p class="eyebrow">JULENE's 9AM CHALLENGE</p><h1>쥴린의 9출 챌린지</h1><p class="subtitle">9출에 성공한 날에만 채울 수 있어요, 굳세어라 쥴린! 찌아요우 쥴린!</p></div>
+      <div class="year">2026년 9월<br>출근 예정일 17일</div>
+    </header>
+    <section class="hero" aria-label="9월 목표 현황">
+      <article class="panel goal-panel"><div class="grape" aria-hidden="true"><img src="assets/kirby-face.png" alt="분홍색 커비 얼굴" /></div><div style="width:100%"><div class="goal-number"><span id="successCount">0</span> / 7회</div><div class="goal-copy">이번 달 목표까지 <strong id="remaining">7회</strong> 남았습니다.</div><div class="progress" aria-label="9월 목표 달성률"><i id="progressBar"></i></div></div></article>
+      <article class="panel summary"><div><div class="metric-label">현재 성공률</div><div class="metric-value"><span id="successRate">0.0</span>%</div></div><div><div class="metric-label">연속 성공</div><div class="metric-value"><span id="streak">0</span><small>일</small></div></div></article>
+    </section>
+    <section class="panel calendar-panel" aria-labelledby="calendarTitle">
+      <div class="calendar-head"><div><p class="eyebrow">SEPTEMBER 2026</p><h2 id="calendarTitle">9월 9출 기록</h2></div><div class="calendar-note">날짜를 눌러 성공 표시</div></div>
+      <div class="days" id="calendar" role="grid" aria-label="2026년 9월 9출 달력"></div>
+      <div class="legend"><span><i>★</i> 9출 성공</span><span><i class="fail-mark">!</i> 9출 실패</span><span><i class="empty"></i> 미기록</span><span><i style="background:#e4e2e4;color:#a49da7">—</i> 재택 또는 휴일</span></div>
+      <div class="actions"><p class="hint" id="statusText">이 기기에서 기록이 자동 저장됩니다.</p><button class="reset" type="button" id="resetBtn">9월 기록 초기화</button></div>
+    </section>
+  </main>
+  <script>
+    const officeDays=[1,2,3,7,8,9,10,14,15,16,17,21,22,23,28,29,30];
+    const monthKey='julin-9am-2026-09';
+    let statuses=JSON.parse(localStorage.getItem(monthKey)||'{}');
+    if(Array.isArray(statuses)){statuses=Object.fromEntries(statuses.map(day=>[day,'success']))}
+    const calendar=document.getElementById('calendar');
+    const today=new Date();
+    function draw(){
+      calendar.innerHTML='';
+      ['일','월','화','수','목','금','토'].forEach(label=>{const el=document.createElement('div');el.className='weekday';el.textContent=label;el.setAttribute('role','columnheader');calendar.appendChild(el)});
+      const firstDay=new Date(2026,8,1).getDay();
+      for(let i=0;i<firstDay;i++){const blank=document.createElement('div');blank.className='day off';blank.setAttribute('aria-hidden','true');calendar.appendChild(blank)}
+      for(let day=1;day<=30;day++){
+        const status=statuses[day]||'', isOffice=officeDays.includes(day), isToday=today.getFullYear()===2026&&today.getMonth()===8&&today.getDate()===day;
+        const el=document.createElement(isOffice?'button':'div');el.className='day '+(isOffice?'':'not-office')+(status?' '+status:'')+(isToday?' today':'')+(day>today.getDate()?' future':'');el.setAttribute('role','gridcell');
+        if(isOffice){el.type='button';el.setAttribute('aria-pressed',String(Boolean(status)));el.setAttribute('aria-label',`${day}일 출근 예정일, ${status==='success'?'9출 성공':status==='fail'?'9출 실패':'미기록'}`);el.addEventListener('click',()=>toggle(day))}
+        const mark=status==='success'?'<img class="stamp" src="assets/kirby-success.png" alt="별과 함께 있는 커비, 9출 성공">':status==='fail'?'<img class="stamp" src="assets/kirby-fail.png" alt="잠옷 모자를 쓴 커비, 9출 실패">':isOffice?'':'—';
+        el.innerHTML=`<span class="day-num">${day}</span><span class="day-mark">${mark}</span>`;calendar.appendChild(el)
+      }
+      updateSummary();
+    }
+    function toggle(day){const next={"":'success',success:'fail',fail:''}[statuses[day]||''];if(next){statuses[day]=next}else{delete statuses[day]}localStorage.setItem(monthKey,JSON.stringify(statuses));draw()}
+    function updateSummary(){const count=Object.values(statuses).filter(value=>value==='success').length;document.getElementById('successCount').textContent=count;document.getElementById('remaining').textContent=Math.max(7-count,0)+'회';document.getElementById('successRate').textContent=(count/17*100).toFixed(1);document.getElementById('progressBar').style.width=Math.min(count/7*100,100)+'%';let run=0;for(let i=officeDays.length-1;i>=0;i--){if(statuses[officeDays[i]]==='success')run++;else break}document.getElementById('streak').textContent=run;document.getElementById('statusText').textContent=count>=7?'9월 목표 7회를 달성했습니다.':'성공은 별 커비, 실패는 놀란 커비로 기록됩니다. 날짜를 누르면 상태가 바뀝니다.'}
+    document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('9월 9출 기록을 모두 초기화할까요?')){statuses={};localStorage.removeItem(monthKey);draw()}});
+    draw();
+  </script>
+</body>
+</html>
